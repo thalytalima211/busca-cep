@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_26_183602) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_26_195953) do
   create_table "cep_stats", force: :cascade do |t|
     t.string "cep"
     t.string "address"
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_26_183602) do
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "search_quantity", default: 1
   end
 
 end
