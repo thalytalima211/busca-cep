@@ -20,4 +20,16 @@ describe 'User visit homepage' do
     expect(page).to have_content 'DDD: 11'
     expect(page).to have_content 'Coord.: (-23.53115, -46.65271)'
   end
+
+  it 'and searches a cep that doesn\'t exist' do
+    json_data = File.read(Rails.root.join('spec/support/json/cep_not_found.json'))
+    fake_response = double('faraday_response', status: 404, body: json_data)
+    allow(Faraday).to receive(:get).with('https://cep.awesomeapi.com.br/json/12345678').and_return(fake_response)
+
+    visit root_path
+    fill_in 'Insira um CEP', with: '12345678'
+    click_on 'Pesquisar'
+
+    expect(page).to have_content 'O CEP 12345678 não foi encontrado! Verifique o código e tente novamente.'
+  end
 end
