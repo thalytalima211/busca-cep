@@ -32,4 +32,16 @@ describe 'User visit homepage' do
 
     expect(page).to have_content 'O CEP 12345678 não foi encontrado! Verifique o código e tente novamente.'
   end
+
+  it 'and searches an invalid cep' do
+    json_data = File.read(Rails.root.join('spec/support/json/invalid_cep.json'))
+    fake_response = double('faraday_response', status: 400, body: json_data)
+    allow(Faraday).to receive(:get).with('https://cep.awesomeapi.com.br/json/12345').and_return(fake_response)
+
+    visit root_path
+    fill_in 'Insira um CEP', with: '12345'
+    click_on 'Pesquisar'
+
+    expect(page).to have_content 'CEP inválido! Siga o formato (XXXXX-XXX).'
+  end
 end

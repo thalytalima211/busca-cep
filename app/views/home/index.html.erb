@@ -1,7 +1,19 @@
 <%= form_with url: root_path, method: :get do |f| %>
     <div>
         <%= f.label :cep, 'Insira um CEP' %>
-        <%= f.number_field :cep %>
+        <%= f.text_field :cep, maxlength: '9', id: 'cep' %>
     </div>
     <%= f.submit 'Pesquisar' %>
 <% end %>
+
+<script>
+    document.getElementById('cep').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, ''); 
+
+        if (value.length > 5) {
+        value = value.replace(/^(\d{5})(\d)/, '$1-$2');
+        }
+
+        e.target.value = value; 
+    });
+</script>
