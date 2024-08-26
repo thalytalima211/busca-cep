@@ -1,0 +1,7 @@
+<%= form_with url: root_path, method: :get do |f| %>
+    <div>
+        <%= f.label :cep, 'Insira um CEP' %>
+        <%= f.number_field :cep %>
+    </div>
+    <%= f.submit 'Pesquisar' %>
+<% end %>

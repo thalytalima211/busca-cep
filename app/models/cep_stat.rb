@@ -1,0 +1,2 @@
+class CepStat < ApplicationRecord
+end

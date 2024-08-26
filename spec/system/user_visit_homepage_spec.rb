@@ -10,9 +10,10 @@ describe 'User visit homepage' do
     fill_in 'Insira um CEP', with: '01153000'
     click_on 'Pesquisar'
 
-    expect(current_path).to eq cep_path(CEP.last)
+    expect(CepStat.count).to eq 1
+    expect(current_path).to eq cep_stat_path(CepStat.last)
     expect(page).to have_content '01153000'
-    expect(page).to have_content 'Rua Victorino Carmilo'
+    expect(page).to have_content 'Rua Vitorino Carmilo'
     expect(page).to have_content 'Bairro: Barra Funda'
     expect(page).to have_content 'Cidade: São Paulo'
     expect(page).to have_content 'Estado: SP'
