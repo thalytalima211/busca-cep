@@ -1,0 +1,5 @@
+pt-BR:
+  alerts:
+    cep_stat:
+      cep_not_found: 'Este CEP não foi encontrado! Verifique o código.'
+      cep_invalid: 'CEP inválido! Siga o formato (XXXXX-XXX).'
