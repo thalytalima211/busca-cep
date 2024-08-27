@@ -6,17 +6,23 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <nav>
-        <h1>Busca por CEP</h1>
+  <body class="bg-slate-50 flex flex-col h-screen">
+    <nav class="bg-rose-950 py-3">
+        <%= link_to 'Busca por CEP', root_path, class: 'pl-6 font-bold text-lg  text-white' %>
     </nav>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= notice %>
+    <main class="container mx-auto px-5 flex grow flex-col">
+      <% if notice %>
+      <div class="w-3/4 text-center py-4 border border-rose-950/50 rounded-lg bg-[#faf0f3] mt-3 mx-auto">
+        <%= notice %>
+      </div>
+      <% end %>
       <%= yield %>
     </main>
   </body>
