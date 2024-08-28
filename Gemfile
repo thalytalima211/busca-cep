@@ -18,6 +18,7 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 group :development, :test do
   gem 'cuprite'
   gem 'debug', platforms: %i[mri windows]
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false

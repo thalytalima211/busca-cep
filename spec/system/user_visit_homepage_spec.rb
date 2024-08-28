@@ -47,8 +47,7 @@ describe 'User visit homepage' do
     end
 
     it 'that is already in the database' do
-      cep = CepStat.create! cep: '01153-000', address: 'Rua Vitorino Carmilo', state: 'SP', city: 'São Paulo',
-                            district: 'Barra Funda', latitude: '-23.53115', longitude: '-46.65271', ddd: 11
+      cep = create :cep_stat, cep: '01153-000', address: 'Rua Vitorino Carmilo', search_quantity: 1
 
       visit root_path
       fill_in 'Insira um CEP', with: '01153-000'
