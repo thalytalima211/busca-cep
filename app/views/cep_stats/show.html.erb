@@ -3,16 +3,28 @@
     <p class="text-sm">CEP</p>
 
     <div class="flex justify-center mt-4 mb-2">
-        <p class="w-1/2 text-right mr-5"><b class="font-bold">Rua: </b><%= @cep_stat.address %></p>
-        <p class="w-1/2 text-left ml-5"><b class="font-bold">Bairro:</b> <%= @cep_stat.district%></p>
+        <p class="w-1/2 text-right mr-5">
+            <b class="font-bold"><%= CepStat.human_attribute_name(:address) %>: </b><%= @cep_stat.address %>
+        </p>
+        <p class="w-1/2 text-left ml-5">
+            <b class="font-bold"><%= CepStat.human_attribute_name(:district) %>:</b> <%= @cep_stat.district%>
+        </p>
     </div>
     <div class="flex justify-center mb-2">
-        <p class="w-1/2 text-right mr-5"><b class="font-bold">Cidade</b>: <%= @cep_stat.city %></p>
-        <p class="w-1/2 text-left ml-5"><b class="font-bold">Estado:</b> <%= @cep_stat.state %></p>
+        <p class="w-1/2 text-right mr-5">
+            <b class="font-bold"><%= CepStat.human_attribute_name(:city) %>:</b> <%= @cep_stat.city %>
+        </p>
+        <p class="w-1/2 text-left ml-5">
+            <b class="font-bold"><%= CepStat.human_attribute_name(:state) %>:</b> <%= @cep_stat.state %>
+        </p>
     </div>
     <div class="flex justify-center mb-7">
-        <p class="w-1/2 text-right mr-5"><b class="font-bold">DDD:</b> <%= @cep_stat.ddd %></p>
-        <p class="w-1/2 text-left ml-5"><b class="font-bold">Coord. :</b> <%= "(#{@cep_stat.latitude}, #{@cep_stat.longitude})"%></p>
+        <p class="w-1/2 text-right mr-5">
+            <b class="font-bold"><%= CepStat.human_attribute_name(:ddd) %>:</b> <%= @cep_stat.ddd %>
+        </p>
+        <p class="w-1/2 text-left ml-5">
+            <b class="font-bold"><%= CepStat.human_attribute_name(:coordinates) %>:</b> <%= @cep_stat.coordinates %>
+        </p>
     </div>
 
     <%= link_to 'Voltar para a tela inicial', root_path, class: 'px-4 py-2 bg-rose-950 rounded-lg text-white'%>

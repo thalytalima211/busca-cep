@@ -19,7 +19,7 @@ describe 'User visit homepage' do
       expect(page).to have_content 'Cidade: São Paulo'
       expect(page).to have_content 'Estado: SP'
       expect(page).to have_content 'DDD: 11'
-      expect(page).to have_content 'Coord. : (-23.53115, -46.65271)'
+      expect(page).to have_content 'Coordenadas: (-23.53115, -46.65271)'
     end
 
     it 'that doesn\'t exist' do

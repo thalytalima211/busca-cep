@@ -3,3 +3,22 @@ pt-BR:
     cep_stat:
       cep_not_found: 'Este CEP não foi encontrado! Verifique o código.'
       cep_invalid: 'CEP inválido! Siga o formato (XXXXX-XXX).'
+  errors:
+    cep_stat:
+      invalid_cep: 'deve estar no formato (XXXXX-XXX)'
+      invalid_ddd: 'deve ter exatamente dois dígitos numéricos'
+  activerecord:
+    models:
+      cep_stat:
+        one: 'Dados de CEP'
+    attributes:
+      cep_stat:
+        cep: 'CEP'
+        address: 'Rua'
+        district: 'Bairro'
+        state: 'Estado'
+        city: 'Cidade'
+        ddd: 'DDD'
+        latitude: 'Latitude'
+        longitude: 'Longitude'
+        coordinates: 'Coordenadas'
