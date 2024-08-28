@@ -43,8 +43,20 @@ describe 'User view most searched ceps' do
 
   it 'and views if there are no ceps searched' do
     visit root_path
-    within('nav') { click_on 'Mais buscados' }
+    click_on 'Mais buscados'
 
     within('#most-searched-for-all') { expect(page).to have_content 'Não há CEPs pesquisados' }
+  end
+
+  it 'and view details' do
+    cep_stat = create :cep_stat, cep: '01001-000', city: 'São Paulo', state: 'SP'
+
+    visit root_path
+    click_on 'Mais buscados'
+    within('tbody tr:nth-child(1)') { click_on 'Visualizar' }
+
+    expect(current_path).to eq cep_stat_path cep_stat
+    expect(page).to have_content '01001-000'
+    expect(page).to have_content 'São Paulo'
   end
 end

@@ -7,14 +7,18 @@
                     <th class="border border-slate-300"><%= CepStat.human_attribute_name(:cep) %></th>
                     <th class="border border-slate-300"><%= CepStat.human_attribute_name(:city) %></th>
                     <th class="border border-slate-300"><%= CepStat.human_attribute_name(:state) %></th>
+                    <th class="border border-slate-300">Detalhes</th>
                 </tr>
             </thead>
             <tbody>
                 <% @most_searched_cep_stats.each do |cep_stat| %>
-                    <tr class="hover:bg-slate-100">
+                    <tr class="bg-gray-50 hover:bg-slate-200">
                         <td class="border-x border-slate-300 pl-3"><%= cep_stat.cep %></td>
                         <td class="border-x border-slate-300 pl-3"><%= cep_stat.city %></td>
                         <td class="border-x border-slate-300 pl-3"><%= cep_stat.state %></td>
+                        <td class="border-x border-slate-300 text-center pb-0.5">
+                            <%= link_to 'Visualizar', cep_stat_path(cep_stat.id), class: 'hover:border-b hover:border-black font-semibold' %>
+                        </td>
                     </tr>
                 <% end %>
             </tbody>
