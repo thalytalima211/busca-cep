@@ -14,9 +14,11 @@
   </head>
 
   <body class="bg-slate-50 flex flex-col h-screen">
-    <nav class="bg-rose-950 py-3">
-        <%= link_to 'Busca por CEP', root_path, class: 'pl-6 font-bold text-lg  text-white' %>
-        <%= link_to 'Mais buscados', most_searched_cep_stats_path %>
+    <nav class="bg-rose-950 py-3 flex">
+        <%= link_to 'Busca por CEP', root_path, class: 'pl-6 font-bold text-lg text-white' %>
+        <%= link_to most_searched_cep_stats_path, class: 'pl-10 text-white text-sm text-white pt-1' do %>
+          <p class="hover:border-b hover:border-white w-fit">Mais buscados</p>
+        <% end %>
     </nav>
     <main class="container mx-auto px-5 flex grow flex-col">
       <% if notice %>

@@ -40,4 +40,11 @@ describe 'User view most searched ceps' do
     expect(page).not_to have_content '20010-000'
     expect(page).not_to have_content 'Rio de Janeiro'
   end
+
+  it 'and views if there are no ceps searched' do
+    visit root_path
+    within('nav') { click_on 'Mais buscados' }
+
+    within('#most-searched-for-all') { expect(page).to have_content 'Não há CEPs pesquisados' }
+  end
 end
