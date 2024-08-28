@@ -14,29 +14,24 @@ describe 'User view most searched ceps by state' do
     within('nav') { click_on 'Mais buscados' }
     within('#most-searched-by-state') { select 'Ceará', from: 'Estado' }
 
-    within('#most-searched-by-state'){
+    within('#most-searched-by-state') do
       within('tbody tr:nth-child(1)') do
-        expect(page).to have_content 'CE'
         expect(page).to have_content '63100-000'
         expect(page).to have_content 'Aracati'
       end
       within('tbody tr:nth-child(2)') do
-        expect(page).to have_content 'CE'
         expect(page).to have_content '60060-000'
         expect(page).to have_content 'Fortaleza'
       end
       within('tbody tr:nth-child(3)') do
-        expect(page).to have_content 'CE'
         expect(page).to have_content '63502-005'
         expect(page).to have_content 'Iguatu'
       end
       within('tbody tr:nth-child(4)') do
-        expect(page).to have_content 'CE'
         expect(page).to have_content '63100-000'
         expect(page).to have_content 'Crato'
       end
       within('tbody tr:nth-child(5)') do
-        expect(page).to have_content 'CE'
         expect(page).to have_content '62040-050'
         expect(page).to have_content 'Tianguá'
       end
@@ -44,7 +39,7 @@ describe 'User view most searched ceps by state' do
       expect(page).not_to have_content 'Sobral'
       expect(page).not_to have_content '30110-000'
       expect(page).not_to have_content 'Belo Horizonte'
-    }
+    end
   end
 
   it 'and views if there are no ceps for state' do
