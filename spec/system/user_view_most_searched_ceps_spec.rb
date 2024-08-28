@@ -12,31 +12,31 @@ describe 'User view most searched ceps' do
     visit root_path
     within('nav') { click_on 'Mais buscados' }
 
-    within('tbody tr:nth-child(1)'){
+    within('tbody tr:nth-child(1)') do
       expect(page).to have_content '60010-000'
       expect(page).to have_content 'Fortaleza'
       expect(page).to have_content 'CE'
-    }
-    within('tbody tr:nth-child(2)'){
+    end
+    within('tbody tr:nth-child(2)') do
       expect(page).to have_content '01001-000'
       expect(page).to have_content 'São Paulo'
       expect(page).to have_content 'SP'
-    }
-    within('tbody tr:nth-child(3)'){
+    end
+    within('tbody tr:nth-child(3)') do
       expect(page).to have_content '80010-000'
       expect(page).to have_content 'Curitiba'
       expect(page).to have_content 'PR'
-    }
-    within('tbody tr:nth-child(4)'){
+    end
+    within('tbody tr:nth-child(4)') do
       expect(page).to have_content '30110-000'
       expect(page).to have_content 'Belo Horizonte'
       expect(page).to have_content 'MG'
-    }
-    within('tbody tr:nth-child(5)'){
+    end
+    within('tbody tr:nth-child(5)') do
       expect(page).to have_content '70040-010'
       expect(page).to have_content 'Brasília'
       expect(page).to have_content 'DF'
-    }
+    end
     expect(page).not_to have_content '20010-000'
     expect(page).not_to have_content 'Rio de Janeiro'
   end
