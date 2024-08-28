@@ -12,6 +12,7 @@ Este é um projeto simples para busca de informações sobre CEPs brasileiros, c
 
 ## Pré-Requisitos
 - [Ruby](https://github.com/rvm/ubuntu_rvm)
+- Node.js e Yarn
 
 ## Como rodar a aplicação
 No terminal, clone o projeto:
