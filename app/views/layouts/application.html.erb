@@ -16,6 +16,7 @@
   <body class="bg-slate-50 flex flex-col h-screen">
     <nav class="bg-rose-950 py-3">
         <%= link_to 'Busca por CEP', root_path, class: 'pl-6 font-bold text-lg  text-white' %>
+        <%= link_to 'Mais buscados', most_searched_cep_stats_path %>
     </nav>
     <main class="container mx-auto px-5 flex grow flex-col">
       <% if notice %>

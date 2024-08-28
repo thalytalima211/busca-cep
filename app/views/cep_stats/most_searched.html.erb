@@ -1,0 +1,21 @@
+<div class="w-1/2 bg-white rounded-lg p-4 mt-4 shadow-md">
+    <h1 class="text-2xl text-center mb-3 font-bold text-gray-800">CEP's mais buscados</h1>
+    <table class="w-5/6 mx-auto table-auto border-collapse border border-slate-400">
+        <thead>
+            <tr class="bg-rose-950 text-white">
+                <th class="border border-slate-300"><%= CepStat.human_attribute_name(:cep) %></th>
+                <th class="border border-slate-300"><%= CepStat.human_attribute_name(:city) %></th>
+                <th class="border border-slate-300"><%= CepStat.human_attribute_name(:state) %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @most_searched_cep_stats.each do |cep_stat| %>
+                <tr class="hover:bg-slate-100">
+                    <td class="border-x border-slate-300 pl-3"><%= cep_stat.cep %></td>
+                    <td class="border-x border-slate-300 pl-3"><%= cep_stat.city %></td>
+                    <td class="border-x border-slate-300 pl-3"><%= cep_stat.state %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
