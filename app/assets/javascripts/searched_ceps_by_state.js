@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbo:load', function() {
     const state = document.getElementById('state').value;
     
     fetchCeps(state);
