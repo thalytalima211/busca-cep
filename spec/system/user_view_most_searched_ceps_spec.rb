@@ -48,7 +48,7 @@ describe 'User view most searched ceps' do
     within('#most-searched-for-all') { expect(page).to have_content 'Não há CEPs pesquisados' }
   end
 
-  it 'and view details' do
+  it 'and views details' do
     cep_stat = create :cep_stat, cep: '01001-000', city: 'São Paulo', state: 'SP'
 
     visit root_path

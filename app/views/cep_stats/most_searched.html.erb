@@ -27,3 +27,23 @@
         <span class="w-3/4 mx-auto text-center py-2 border border-rose-950/50 rounded-lg bg-[#faf0f3]">Não há CEPs pesquisados</span>
     <% end %>
 </div>
+
+<div class="w-1/2 bg-white rounded-lg p-4 mt-4 shadow-md flex flex-col" id="most-searched-by-state">
+    <h1 class="text-2xl text-center mb-3 font-bold text-gray-800">CEP's mais buscados por estado</h1>
+    <%= form_with do |f| %>
+        <%= f.label :state, 'Estado' %>
+        <%= f.select :state, options_for_select(CepStat::STATES.map { |acronym, name| [name, acronym] }), {}, id: 'state' %>
+    <% end %>
+    <span id="message" class="w-3/4 mx-auto text-center py-2 border border-rose-950/50 rounded-lg bg-[#faf0f3]" style="display: none;"></span>
+    <table class="w-5/6 mx-auto table-auto border-collapse border border-slate-400" id="state-ceps">
+        <thead>
+            <tr class="bg-rose-950 text-white">
+                <th class="border border-slate-300"><%= CepStat.human_attribute_name(:state) %></th>
+                <th class="border border-slate-300"><%= CepStat.human_attribute_name(:cep) %></th>
+                <th class="border border-slate-300"><%= CepStat.human_attribute_name(:city) %></th>
+                <th class="border border-slate-300">Detalhes</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
